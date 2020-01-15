@@ -13,5 +13,6 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/transform
 명사로 검색할것. https://thenounproject.com/
 5. transition 종류
 https://matthewlein.com/tools/ceaser
-
+6. 아이콘 
+https://fontawesome.com/
 
