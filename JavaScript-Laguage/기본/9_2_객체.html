@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+        // 객체와 반복문의 조우
+        // in을 중심으로 앞에는 key값, 뒤쪽에는 객체 가 구성된다.
+
+        var Avengers = { 'Iron Man': 1, 'Captain America': 2, 'Hulk': 3 };
+        for (var key_name in Avengers) {
+            document.write("키 이름 : " + key_name + "<br />" + " 키의 값 : " + Avengers[key_name] + "<br />");
+        }
+    </script>
+</body>
+
+</html>
