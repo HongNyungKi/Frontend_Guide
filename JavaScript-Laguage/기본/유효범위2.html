@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+        // 유효범위의 사례이다.
+
+        // 1. 지역 변수의 사용.
+        // 반드시 변수 앞에 var 사용할 것.
+        function a() {
+            var Avengers = 0;
+        }
+        for (var Avengers = 0; Avengers < 5; Avengers++) {
+            a();
+            document.write(Avengers);
+        }
+        // 결과 01234
+
+        // // 2. 전역변수의 사용
+        // // 변수앞에 var 사용안함.
+        function a() {
+            Onepiece = 0;
+        }
+        for (Onepiece = 0; Onepiece < 5; Onepiece++) {
+            a();
+            document.write(Onepiece)
+        }
+
+        // 결과 무한반복
+    </script>
+</body>
+
+</html>
