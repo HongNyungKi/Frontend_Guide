@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+
+    <!-- alert은 경고창이라고 부른다. 사용자에게 정보를 제공하거나 디버깅등의 용도로 많이 사용한다.
+    특징으로 '확인'을 누르기 전까지는 다음 코드가 실행되지 않는다. -->
+    <input type="button" value="alert" onclick="alert('Hello World')">
+
+    <!-- confirm은 확인을 누르면 true, 취소를 누르면 false를 리턴한다. -->
+    <input type="button" value="confirm" onclick="confirm_func()" />
+
+    <!-- prompt는 사용자로 부터 값을 입력받는 기능이다. -->
+    <input type="button" value="prompt" onclick="prompt_func()" />
+
+    <script>
+        function confirm_func() {
+            if (confirm('ok?')) {
+                alert('ok');
+            } else {
+                alert('cancel');
+            }
+        }
+
+        function prompt_func() {
+            if (prompt('아이디를 입력하세요.') === 'hnk2017') {
+                alert('welcome');
+            } else {
+                alert('fail')
+            }
+        }
+    </script>
+</body>
+
+</html>
