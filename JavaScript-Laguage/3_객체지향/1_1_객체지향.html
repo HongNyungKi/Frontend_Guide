@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- 객체란 서로 연관된 변수와 함수(메소드)를 그룹핑 한 그릇이라고 할 수 있다.
+    객체 내의 변수의 속성(property)에 담겨있는 함수를 메소드(method)라고 부른다. -->
+</head>
+
+<body>
+    <script>
+        var person = {}
+        person.name = 'Tony';
+        person.introduce = function () {
+            return 'My name is ' + this.name;
+        }
+        document.write(person.introduce());
+        // this는 해당 함수가 담겨있는 객체를 의미한다. 즉 person{}
+
+        // # 객체를 풀이 할 때 다른 코드가 난입하거나 하지 않고, 알아보기 쉽게 하는 다른 입력 방법도 있다.
+        var hero = {
+            'name' : 'Iron Man',
+            'introduce' : function () {
+                return 'His name is ' + this.name;
+            }
+        }
+        document.write(hero.introduce());
+
+        
+    </script>
+</body>
+
+</html>
