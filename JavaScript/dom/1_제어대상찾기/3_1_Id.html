@@ -2,19 +2,20 @@
 <html>
 
 <head>
-    <!-- id 값을 기준으로 객체를 조회한다. 성능면에서 가장 우수하다. -->
+    <!-- document.getElementById -->
 </head>
 
 <body>
     <ul>
-        <li id="active">HTML</li>
-        <li>CSS</li>
+        <li>HTML</li>
+        <li id="active">CSS</li>
         <li>JavaScript</li>
     </ul>
     <script>
         var li = document.getElementById('active');
         li.style.color = 'red'
     </script>
+
 </body>
 
 </html>

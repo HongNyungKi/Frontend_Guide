@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- document.getElementsByTagName -->
+</head>
+
+<body>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+    <ol>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ol>
+    <script>
+        var ol = document.getElementsByTagName('ol')[0];
+        // ul중 첫번째 인덱스를 나타내는 [0] 를 반드시 삽입해야한다.
+        var lis = ol.getElementsByTagName('li');
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].style.color = 'blue';
+        }
+    </script>
+
+</body>
+
+</html>

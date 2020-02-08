@@ -2,21 +2,22 @@
 <html>
 
 <head>
-    <!-- class 속성의 값을 기준으로 객체를 조회할수도 있다. -->
+    <!-- document.getElementsByTagName -->
 </head>
 
 <body>
     <ul>
         <li>HTML</li>
-        <li class="active">CSS</li>
-        <li class="active">JavaScript</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
     </ul>
     <script>
-        var lis = document.getElementsByClassName('active');
+        var lis = document.getElementsByTagName('li');
         for (var i = 0; i < lis.length; i++) {
             lis[i].style.color = 'red';
         }
     </script>
+
 </body>
 
 </html>

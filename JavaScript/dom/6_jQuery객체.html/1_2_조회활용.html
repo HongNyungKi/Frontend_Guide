@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- jQuery 객체에는 조회된 엘리먼트가 담겨 있다.
+    jQuery 객체는 일종의 유사배열의 형태로 조회된 엘리먼트를 가지고 있기 때문에 배열처럼 사용해서 엘리먼트를 가져올 수 있다. -->
+    
+    <!-- 조회된 객체가 제이쿼리의 객체가 아닐수있다. -->
+</head>
+
+<body>
+    <ul>
+        <li>html</li>
+        <li>css</li>
+        <li>JavaScript</li>
+    </ul>
+    <script src="../6_jQuery객체.html/jquery-3.4.1.min.js"></script>
+    <script>
+        var lis = $('li');
+        // console.log(lis[1]); 
+        // 결과: <li>css</li>
+        // * 몇개의 element가 있는지 확인시 li.length
+        for (var i = 0; i < lis.length; i++) {
+            $(lis[i]).css('color', 'red');
+        }
+        // 불러온 li는 jquery객체가 아닌 dom객체이므로 다시 jquery객체로 만들어준후 property를 입력한다.
+    </script>
+
+</body>
+
+</html>

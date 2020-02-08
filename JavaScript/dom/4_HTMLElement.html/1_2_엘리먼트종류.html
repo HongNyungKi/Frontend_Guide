@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<!-- 각각의 엘리먼트의 종류에 따라 갖고있는 프로퍼티가 다름을 나타낸다. -->
+</head>
+
+<body>
+    <a id="anchor" href="http://opentutorials.org">opentutorials</a>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li id="list">JavaScript</li>
+    </ul>
+    <input type="button" id="button" value="button" />
+    <script>
+
+        var target = document.getElementById('list');
+        alert(target.constructor.name);
+        // 결과: HTMLLIElement
+
+        var target = document.getElementById('anchor');
+        alert(target.constructor.name);
+        // 결과: HTMLAnchorElement
+
+        var target = document.getElementById('button');
+        alert(target.constructor.name);
+        // 결과: HTMLInputElement
+        
+    </script>
+
+</body>
+
+</html>
