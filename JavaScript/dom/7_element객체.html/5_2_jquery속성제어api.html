@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    element를 제어 할때 attribute, property를 제어하는 방식으로 제어하였다.
+    이 두가지의 구분이 jquery에도 있다.
+    이때 장점은
+    1. 코드가 짧아진다.
+    2. set/get~~ 이렇게 되어있지 않고 attr 하나로 되어있어 보기 쉽다.
+    3. property 방식 사용시 제한을 낫게 해준다(다시공부!!!!!!!!!!!)
+</head>
+
+<body>
+    <p id="Tony">블라블라</p>
+    <a id="t1" href="./demo.html">opentutorials</a>
+    <input id="t2" type="checkbox" checked="checked" />
+    <script src="./jquery-3.4.1.min.js"></script>
+    <script>
+        var Avengers = document.getElementById('Tony')
+        // attribute 방식
+        Avengers.setAttribute('class', 'Captain');
+        // property 방식
+        Avengers.className('Captain');
+
+
+        // 현재 문서의 URL이 아래와 같다고 했을 때
+        // http://localhost/jQuery_attribute_api/demo2.html
+        var t1 = $('#t1');
+        console.log(t1.attr('href')); // ./demo.html 
+        console.log(t1.prop('href')); // http://localhost/jQuery_attribute_api/demo.html 
+
+        var t2 = $('#t2');
+        console.log(t2.attr('checked')); // checked
+        console.log(t2.prop('checked')); // true
+    </script>
+
+</body>
+
+</html>

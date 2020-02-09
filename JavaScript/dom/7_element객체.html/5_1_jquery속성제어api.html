@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    element객체의 api에 해당하는 기능을 jquery에서 어떻게 구사하는가.
+    즉 jquery의 api는 무엇이 있을까!!
+    jQuery 객체의 메소드 중 setAttribute, getAttribute에 대응되는 메소드는 attr이다.
+    또한 removeAttribute에 대응되는 메소드로는 removeAttr이 있다.
+</head>
+
+<body>
+    <a href="https://namu.wiki/w/%EC%95%84%EC%9D%B4%EC%96%B8%EB%A7%A8" id="Tony">아이언맨</a>
+    <script src="./jquery-3.4.1.min.js"></script>
+    <script>
+        var Avengers = $('#Tony');
+        // 속성의 내용을 조회하는 것
+        alert(Avengers.attr('href'));
+        // 속성의 값을 추가하는 것
+        Avengers.attr('title', '토니스타크');
+        // 속성의 값을 제거하는 것
+        Averngers.removeattr('title');
+    </script>
+
+</body>
+
+</html>

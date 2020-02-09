@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- 속성은 HTML에서 태그명만으로는 부족한 부가적인 정보라고 할 수 있다. 이 속성을 어떻게 제어하는가 알아보자.
+    속성을 제어하는 API는 아래와 같다.
+    Element.getAttribute(name)  속성의 내용을 조회하는 것
+    Element.setAttribute(name, value)  속성의 값을 바꾸고, 추가하는 것
+    Element.hasAttribute(name);   속성이 있는지 없는지 확인하는 법 
+    Element.removeAttribute(name); 속성을 제거하는 법-->
+</head>
+
+<body>
+    <a href="https://namu.wiki/w/%EC%95%84%EC%9D%B4%EC%96%B8%EB%A7%A8" id="Tony">아이언맨</a>
+    <script>
+        var Avengers = document.getElementById('Tony');
+        // 이제 Avengers가 갖고있는 element객체의 메소드인 getAttribute('속성') 하면 속성의 값을 가져온다는 것이다. 
+        alert(Avengers.getAttribute('href'));
+        // 결과: 연동시킨 인터넷 페이지 주소
+        alert(Avengers.getAttribute('id'));
+        // 결과: Tony
+        // * Avengers.id와 같은 기능이다
+
+        // 속성의 값을 변경하는 법
+        Avengers.setAttribute('href', 'https://ko.wikipedia.org/wiki/%EB%A1%9C%EB%B2%84%ED%8A%B8_%EB%8B%A4%EC%9A%B0%EB%8B%88_%EC%A3%BC%EB%8B%88%EC%96%B4');
+
+        // 동일하지 않은 다른 속성을 추가하는 법
+        Avengers.setAttribute('title', '과연 그는 누구인가.');
+
+        // 속성을 제거하는 법
+        Avengers.removeAttribute('title', '과연 그는 누구인가.');
+
+        // 속성이 있는지 없는지 확인하는 법
+        Avengers.hasAttribute('title');
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    class, id와 같은 html을 작업하고자 하는 객체를 조회할 때 getElementbyclassname 과 api 를 통해 찾아내어 작업한다.
+    이 때, 이 각각의 element들이 자신을 찾아 낼 수 있도록 이름을 갖는 것을 식별자(id,class,tag name ...)라고 한다.
+    이것들을 프로그래밍 적으로 찾아내고 변경하는 방법이다.
+</head>
+
+<body>
+    <ul>
+        <li>html</li>
+        <li>css</li>
+        <li id="active" class="important current">JavaScript</li>
+    </ul>
+    <script>
+        alert(document.getElementById('active').tagName)
+
+        // 이때, document.getElementById('active') 하므로써 HTMLLIElement를 객체를 갖게된다.
+        //  이는 HTMLElement가 갖고있는 속성을 상속받고,
+        //  HTMLElement는 Element객체의 속성을 상속 받는다. 
+        //  여기서 Element객체가 갖고있는 속성에는  tagName 이 있다. (element의 태그 이름이 무엇인지 알아내는 속성)
+        // tagName='a' 와 같이 태그를 바꿀수는 없다. 이 속서은 읽기 전용이기 때문이다. 
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    element객체가 갖고 있는 속성중에 classname 가 있다. = element.className
+</head>
+
+<body>
+    <ul>
+        <li>html</li>
+        <li>css</li>
+        <li id="avengers">JavaScript</li>
+    </ul>
+    <script>
+        var a = document.getElementById('avengers');
+        a.className = "Tony Captain Hulk";
+        alert(a.className);
+        // 이렇게 하면 a태그에 class값도 추가가된다. 
+
+        // 여기에 claa값을 또 추가하고 싶으면
+        a.className = a.className + " BlackWidow"
+        alert(a.className);
+    </script>
+
+</body>
+
+</html>
