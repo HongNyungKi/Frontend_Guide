@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    노드를 추가, 제거, 변경하는 방법.
+    appendChild(child) / insertBefore(newElement, referenceElement) / removeChild(child) / replaceChild(newChild,
+    oldChild)
+    노드를 추가하기 전에 추가 할 element를 생성하는 것은, document객체의 기능이다.
+    document.createElement(tagname) / document.createTextNode(data)
+</head>
+
+<body>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li id="target">JavaScript</li>
+    </ul>
+    <input type="button" onclick="callReplaceChild();" value="replaceChild()" />
+    <!-- 여기서 <li id="target">JavaScript</li> 을 바꾸기 할 것이다.  -->
+    <script>
+        function callReplaceChild(){
+            var a = document.createElement('a');
+            a.setAttribute('href', 'http://opentutorials.org/module/904/6701');
+            a.appendChild(document.createTextNode('Web browser JavaScript'));
+     
+            var target = document.getElementById('target');
+            target.replaceChild(a,target.firstChild);
+        }
+    </script>
+
+</body>
+
+</html>

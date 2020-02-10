@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    jquery에서 조회범위를 제한하여 객체를 조회하는 법(selector context 활용하기 / find활용하기)
+    selector context 첫번째 인자에 해당되는 selector를 제어하려는 element이다.
+    jquery객체에서 find를 하게되면 find의 인자로 전달된 선택자에 해당하는 element들만을 찾게되는 것.
+
+    이전 수업에서 Element 객체에서 getElementsBy* 메소드를 실행하면 조회의 범위가 그 객체의 하위 엘리먼트로 제한된다는 것을 알아봤다.
+    jQuery에서는 어떻게 이러한 작업을 할 수 있을까?
+</head>
+
+<body>
+    <ul>
+        <li class="marked">html</li>
+        <li>css</li>
+        <li id="active">JavaScript
+            <ul>
+                <li>JavaScript Core</li>
+                <li class="marked">DOM</li>
+                <li class="marked">BOM</li>
+            </ul>
+        </li>
+    </ul>
+    <script src="./jquery-3.4.1.min.js"></script>
+    <script>
+        // 이때 id 값이 active인 element하위에 있는 class값이 marked인 element를 조회하여 속성 부여하기
+        // 첫번째 방법 $('.제어하려는 element를 지정','seletor context')
+        $('.marked', '#active').css('background-color', 'red');
+        
+        // // css선택자를 이용한 두번째 방법
+        $('#active .marked').css('background-color', 'red');
+
+        // find를 활용한 세번째 방법
+        $('#active').find('.marked').css('background-color', 'red');
+
+        // 활용
+        $('#active').css('color','blue').find('.marked').css( "background-color", "red" );
+
+    </script>
+
+</body>
+
+</html>
