@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    노드를 이동시키는 방법
+    추가의 기능을 활용한 것이다.
+</head>
+
+<body>
+    <div class="target" id="target1">
+        target 1
+    </div>
+
+    <div id="source">source</div>
+    <input type="button" value="append source to target 1" id="btn1" />
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+        $('#btn1').click(function () {
+            $('#target1').append($('#source'));
+        })
+    </script>
+
+</body>
+
+</html>
