@@ -2,6 +2,12 @@
 <html>
 
 <head>
+    텍스트 노드가 상속 받은 CharacterData 객체는 문자를 제어할 수 있는 다양한 API를 제공한다.
+    appendData()
+    deleteData()
+    insertData()
+    replaceData()
+    substringData()
     <style>
         #target {
             font-size: 77px;
@@ -26,6 +32,7 @@
         <input type="button" value="insertData(start,data)" onclick="callInsertData()" />
         <input type="button" value="replaceData(start,end,data)" onclick="callReplaceData()" />
         <input type="button" value="substringData(start,end)" onclick="callSubstringData()" /></p>
+
     <script>
         var target = document.getElementById('target').firstChild;
         var data = document.getElementById('datasource');
@@ -45,6 +52,7 @@
         }
         function callSubstringData() {
             alert(target.substringData(start.value, end.value));
+        }
     </script>
 
 </body>
