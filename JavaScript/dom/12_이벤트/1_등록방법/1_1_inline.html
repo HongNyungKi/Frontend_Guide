@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    인라인(inline) 방식으로 이벤트를 등록하는 방법을 알아보자.
+    인라인 방식은 이벤트를 이벤트 대상의 태그 속성으로 지정하는 것이다.
+    <!-- <input type="button" onclick="alert('Hello world');" value="button" /> -->
+</head>
+
+<body>
+    <!-- 자기 자신을 참조하는 불편한 방법 -->
+    <!-- 이는 id값 때문에 중복이 안된다.  -->
+    <input type="button" id="target" onclick="alert('Hello World, '+document.getElementById('target').value)"
+        value="button" />
+
+    <!-- this를 통해서 간편하게 참조하는 법 -->
+    <!-- 중복 가능 -->
+    <input type="button" onclick="alert('Hello World, '+this.value)" value="button" />
+    <script>
+
+    </script>
+
+</body>
+
+</html>
