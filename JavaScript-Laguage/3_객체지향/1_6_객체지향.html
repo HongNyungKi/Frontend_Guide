@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+        function func() {
+            if (window === this) {
+                document.write("window === this");
+            }
+        }
+        func();
+
+        var o = {
+            func: function () {
+                if (o === this) {
+                    document.write("o === this");
+                }
+            }
+        }
+        o.func();   
+    </script>
+</body>
+
+</html>
