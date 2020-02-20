@@ -1,0 +1,19 @@
+@@@ <base /> @@@
+
+html 문서에 포함된 모든 상대 url들의 기준 url를 설정한다. 
+한 문서에 하나의 <base />요소만 포함 가능. 
+보통 경로를 작성하는 곳(link tag와 같은) 위에 입력한다. 
+
+- 속성 href: 기준 url
+ex) <base href="./~~/">
+예제)
+<img src="https://www.hyundai.com/content/dam/hyundai/kr/ko/images/vehicles/sonata-hybrid/19lc/main-keyvisual-sonata-hybrid-19lc-w.jpg" alt="샘플이미지1">
+<img src="https://www.hyundai.com/content/dam/hyundai/kr/ko/images/main/main-keyvisual-n-performance-parts-w.jpg" alt="샘플이미지2">
+같은 사이트에서 해당 이미지를 이렇게 지속적으로 가져 올때 base tag사용이 용이하다. 
+따라서, 
+<base href="https://www.hyundai.com/content/dam/hyundai/kr/ko/images/">
+설정 후 
+<img src="vehicles/sonata-hybrid/19lc/main-keyvisual-sonata-hybrid-19lc-w.jpg" alt="샘플이미지1">
+<img src="main/main-keyvisual-n-performance-parts-w.jpg" alt="샘플이미지2">
+라고만 입력하여도 된다. 
+
