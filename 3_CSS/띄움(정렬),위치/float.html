@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <title>
+        float: 요소를 좌우 방향으로 띄움(수평 정렬)
+        <!-- 대체로 flex가 생겼다. -->
+        - 기본값: none(요소 띄움 없음)
+        - 속성값: left(왼쪽으로 띄움)
+        - 속성값: right(오른쪽으로 띄움)
+    </title>
+    <style>
+        article {}
+
+        article .picture {
+            width: 200px;
+            height: 150px;
+            background: tomato;
+            float: left;
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+
+        .text {
+            /* flaot의 기능을 멈추기 위한 clear */
+            clear: left;
+        }
+
+        .box {
+            width: 200px;
+            height: 100px;
+            background: tomato;
+            font-size: 30px;
+            margin: 10px;
+            color: white;
+            float: left;
+            /* float은 단순히 정렬이 아닌 왼쪽부터, 오늘쪽 부터 쌓기 시작한다. 라는 개념이다. */
+        }
+
+        .box4 {
+            width: 200px;
+            height: 150px;
+            background: orange;
+            clear: left;
+            /* 다른 box들이 float이 적용되어 겹침이 되는 것을 막기위해 clear사용*/
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <img src="./이미지자료/float(단순띄움).PNG" alt=""> -->
+    <!-- <img src="./이미지자료/clear(float의 단순해체).PNG" alt=""> -->
+    <!-- <img src="./이미지자료/float의 수평 정렬.PNG" alt=""> -->
+    <!-- <img src="./이미지자료/clear(float의 정렬해제).PNG" alt=""> -->
+    <article>
+        <div class="picture"></div>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis at officia veniam saepe eius eligendi blanditiis
+        consequuntur possimus quasi, nesciunt iusto doloribus nostrum quisquam praesentium eaque vitae animi aut qui
+        magnam! Temporibus illum ducimus eaque minima distinctio a. Ad aliquam maxime culpa labore modi voluptate veniam
+        amet facere similique impedit velit alias qui ratione possimus vel odit, expedita atque! Voluptatum eum
+        exercitationem distinctio explicabo fugit necessitatibus neque magnam, iure corrupti consequuntur ratione,
+        facere sequi reprehenderit praesentium est a architecto quisquam.
+        <div class="text">Asperiores consequatur totam dolor sint
+            corrupti corporis itaque porro voluptate sequi, eligendi reprehenderit vel obcaecati fuga ex, facilis
+            officiis
+            pariatur.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis at officia veniam saepe eius
+            eligendi blanditiis
+            consequuntur possimus quasi, nesciunt iusto doloribus nostrum quisquam praesentium eaque vitae animi aut qui
+            magnam! Temporibus illum ducimus eaque minima distinctio a. Ad aliquam maxime culpa labore modi voluptate
+            veniam
+            amet facere similique impedit velit alias qui ratione possimus vel odit, expedita atque! Voluptatum eum
+            exercitationem distinctio explicabo fugit necessitatibus neque magnam, iure corrupti consequuntur ratione,
+            facere sequi reprehenderit praesentium est a architecto quisquam. Asperiores consequatur totam dolor sint
+            corrupti corporis itaque porro voluptate sequi, eligendi reprehenderit vel obcaecati fuga ex, facilis
+            officiis
+        </div>
+        pariatur.
+    </article>
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box4">4</div>
+</body>
+
+</html>
