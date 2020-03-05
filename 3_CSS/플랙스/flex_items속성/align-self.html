@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <title>
+        align-self: 교차 축(cross-axis)에서 개별 item의 정렬 방법을 설정한다.
+        즉, container에 align-items로 정렬 후 개별 적으로 하나의 item만을 다시 정렬하는 방법이다.
+
+        - 기본값: auto(container의 align-items속성을 상속받음)
+        - 속성값: stretch
+        - 속성값: flex-start
+        - 속성값: flex-end
+        - 속성값: center
+        - 속성값: baseline
+    </title>
+    <style>
+        .container {
+            border: 3px solid;
+            display: flex;
+            flex-wrap: wrap;
+            width: 500px;
+            height: 400px;
+            align-items: flex-end;
+        }
+
+        .item {
+            border: 3px solid red;
+            width: 100px;
+            height: 100px;
+            background: tomato;
+            border-radius: 10px;
+        }
+
+        .item2 {
+            align-self: center;
+        }
+
+        .item4 {
+            align-self: flex-start;
+        }
+
+        .item5 {
+            align-self: stretch;
+            height: auto;
+            /* height를 입력하여 stretch가 적용되게한다. */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item item4">4</div>
+        <div class="item item5">5</div>
+        <div class="item item6">6</div>
+        <div class="item item7">7</div>
+        <div class="item item8">8</div>
+    </div>
+</body>
+
+</html>
