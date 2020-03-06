@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>
+        grid-template-rows
+        grid-template-columns
+        : 명시적 행(track)의 크기를 정의한다. 동시에 라인(line)의 이름도 정의 할 수 있다.
+        즉, 열과 행 & 크기 를 같이 정의 하는 것이다.
+        - fr(fraction,공간비율)단위를 사용할 수 있다.
+        - repeat() 함수를 사용 할 수 있다.
+    </title>
+    <style>
+        .container {
+            display: grid;
+            border: 4px solid lightgray;
+            /* 열 과 행 의 개수를 2개라고 했을때 각각의 크기를 따로 적어주기 */
+            grid-template-columns: 200px 200px;
+            grid-template-rows: 100px 100px
+
+                /* container의 크기에 비율적으로 item들의 크기를 정의 하고 싶을때 fr활용하기 */
+            grid-template-rows: 100px 100px;
+            grid-template-columns: 1fr 1fr 1fr;
+
+            /* item의 숫자가 늘어남에 따라 rows와 columns 의 값을 정의 하는 개수가 달라진다.
+            이를 편히 하기 위해  repeat()함수를 사용한 */
+            grid-template-rows: repeat(2, 100px);
+            grid-template-columns: repeat(3, 1fr);
+            /* 같은 반복시에만 이를 사용한다. */
+        }
+
+        .item {
+            border: 2px dashed red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+    <img src="../이미지자료/repeat()함수사용원리.PNG" alt="">
+</body>
+
+</html>

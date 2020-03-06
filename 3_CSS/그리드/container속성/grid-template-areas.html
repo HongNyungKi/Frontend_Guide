@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <title>
+        grid-template-area: 지정된 grid 영역 이름(grid-area)을 참조하여 grid template를 생성한다.
+        <!-- grid-area는 contianer가 아닌 item에 적용하는 속성이다. -->
+        형태 예시)
+        .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 100px);
+        grid-template-areas:
+        "header header header"
+        "main main aside"
+        "footer footer footer";
+        }
+        ---------------------------
+        <!-- <header class="header"></header>
+    <main class="main"></main>
+    <aside class="aside"></aside>
+    <footer class="footer"></footer> -->
+
+    </title>
+    <style>
+        .container {
+            width: 600px;
+            display: grid;
+            grid-template-rows: repeat(3, 100px);
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas:
+                "header . header"
+                /* grid-template-areas에 . 을 입력하면 해당 영역에는 영영을 갖고 있느 공백이 들어간다. */
+                "main main aside"
+                "footer footer footer";
+        }
+
+        .item {
+            border: 10px solid red;
+        }
+
+        .item:nth-child(1) {
+            grid-area: header;
+        }
+
+        .item:nth-child(2) {
+            grid-area: main;
+        }
+
+        .item:nth-child(3) {
+            grid-area: aside;
+        }
+
+        .item:nth-child(4) {
+            grid-area: footer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">HEADER</div>
+        <div class="item">MAIN</div>
+        <div class="item">ASIDE</div>
+        <div class="item">FOOTER</div>
+    </div>
+</body>
+
+</html>

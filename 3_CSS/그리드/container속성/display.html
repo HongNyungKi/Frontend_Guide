@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <title>
+        display: grid container를 정의한다.
+        정의된 container의 자식 요소들은 자동으로 grid items로 정의된다.
+        <!-- grid를 사용하기 위해 container에 필수로 작성!! -->
+        - 속성값: grid(block특성의 grid container를 정의)
+        - 속성값: inline-grid(inline특성의 grid container를 정의)
+    </title>
+    <style>
+        .container {
+            display: inline-grid;
+            /* display: grid; */
+            width: 300px;
+            height: 250px;
+            border: 4px solid lightgray;
+        }
+
+        .item {
+            border: 2px dashed red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+</body>
+
+</html>
