@@ -1,0 +1,25 @@
+프로젝트 규모가 커지면 파일들을 세분화 하여 유지보수가 쉽도록 관리한다.
+이 경우 파일이 점점 많아지는데, 모든 파일이 컴파일 시 각각의 ~.css 파일로 나눠서 저장된다면 관리나 성능 차원에서 문제가 될 수도 있다.
+그래서 SASS는 partials기능을 제공한다.
+
+파일 이름 앞에 _를 붙여 (_header.scss와 같이) @import로 가져오면 컴파일 시 ~.css 파일로 컴파일 하지 않는다.
+
+
+<!-- _추가한 파일 현황 -->
+├─scss
+│ ├─_header.scss
+│ ├─_side-menu.scss
+│ └─main.scss
+
+<style>
+/* main.scss에 가져오기*/
+    @import "header", "side-menu";
+</style>
+
+<!-- 결과 파일 현황-->
+├─css
+│  └─main.css  (main + header + side-menu)
+├─scss
+│  ├─header.scss
+│  ├─side-menu.scss
+│  └─main.scss
