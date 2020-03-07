@@ -1,0 +1,19 @@
+문자 연산에는 + 가 사용된다. 
+문자 연산의 결과는 첫 번째 피연산자를 기준으로 한다. 
+첫번째 피연산자에 따옴표가 붙어 있다면 연산 결과를 따옴표로 묶는다. 
+반대로 첫번째 피연산자에 따옴표가 붙어있지 않다면 연산 결과도 따옴표를 처리하지 않는다. 
+
+<!-- SCSS -->
+
+.div::after{
+    content:"hello"+world;
+    flex-flow:row + "-reverse" + " "+ wrap
+  }
+
+  <!-- CSS -->
+
+  .div::after {
+    content: "helloworld";
+    flex-flow: row-reverse wrap;
+  }
+  

@@ -1,0 +1,23 @@
+SASS의 @if 조건문에서 사용되는 논리(boolean)연산에는 'and(그리고)','or(또는)','!(부정)'이 있습니다. 
+자바스크립트 문법의 &&,||,! 와 같다. 
+
+<!-- SCSS -->
+
+$w: 100px;
+.item{
+  display:block;
+  @if($w>50px or $w<90px){
+    width:400px;
+  }
+  @if not($w>150px){
+    height:400px;
+  }
+}
+
+<!-- CSS -->
+
+.item {
+    display: block;
+    width: 400px;
+    height: 400px;
+  }

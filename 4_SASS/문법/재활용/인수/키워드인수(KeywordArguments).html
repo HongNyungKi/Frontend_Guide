@@ -1,0 +1,23 @@
+<!-- SCSS에서의 형태 -->
+@mixin 믹스인이름($매개변수a:기본값, $매개변수b:기본값){스타일;}
+
+<!-- SCSS -->
+
+@mixin Avengers($width:100px, $color:black){
+    border:$width solid $color;
+  }
+  .box1{
+    @include Avengers;
+  }
+  .box2{
+    @include Avengers($color:red);
+  }
+
+<!-- CSS -->
+.box1 {
+    border: 100px solid black;
+  }
+  
+  .box2 {
+    border: 100px solid red;
+  }

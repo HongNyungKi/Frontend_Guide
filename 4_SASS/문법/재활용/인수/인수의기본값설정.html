@@ -1,0 +1,26 @@
+인수(argument)는 기본값(default value)을 가질 수 있다. 
+@include 포함 단계에서 별도의 인수가 전달되지 않으면 기본값이 사용된다. 
+
+<!-- SCSS에서의 형태 -->
+@mixin 믹스인이름($매개변수:기본값){스타일;}
+
+<!-- SCSS -->
+
+@mixin Avengers($width:100px){
+    border:$width solid red;
+  }
+  .box1{
+    @include Avengers;
+  }
+  .box2{
+    @include Avengers(200px);
+  }
+
+<!-- CSS -->
+.box1 {
+    border: 100px solid red;
+  }
+  
+  .box2 {
+    border: 200px solid red;
+  }

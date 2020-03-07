@@ -1,0 +1,40 @@
+색상도 연산할 수 있다. 
+
+<!-- SCSS -->
+div {
+    color: #123456 + #345678;
+    // R: 12 + 34 = 46
+    // G: 34 + 56 = 8a
+    // B: 56 + 78 = ce
+    background: rgba(50, 100, 150, .5) + rgba(10, 20, 30, .5);
+    // R: 50 + 10 = 60
+    // G: 100 + 20 = 120
+    // B: 150 + 30 = 180
+    // A: Alpha channels must be equal
+  }
+
+<!-- CSS -->
+div {
+    color: #468ace;
+    background: rgba(60, 120, 180, 0.5);
+  }
+
+RGBA에서 Alpha 값은 연산되지 않으며 서로 동일해야 다른 값의 연산이 가능하다. 
+Alpha값을 연산하기 위한 다음과 같은 색상 함수(color functions)를 사용할 수 있다. 
+- opacify()
+- transparentize()
+
+<!-- SCSS -->
+
+$color: rgba(10, 20, 30, .5);
+div {
+  color: opacify($color, .3);  // 30% 더 불투명하게 / 0.5 + 0.3
+  background-color: transparentize($color, .2);  // 20% 더 투명하게 / 0.5 - 0.2
+}
+
+<!-- CSS -->
+
+div {
+    color: rgba(10, 20, 30, 0.8);
+    background-color: rgba(10, 20, 30, 0.3);
+  }

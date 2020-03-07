@@ -1,0 +1,33 @@
+때때로 입력할 인수의 개수가 불확실한 경우가 있다. 
+그럴 경우 가변 인수를 사용할 수 있다. 
+가변 인수는 매개변수 뒤에 ... 을 붙인다. 
+<!-- SCSS에서의 형식 -->
+@mixin 믹스인이름($매개변수...){스타일;}
+@include 믹스인이름(인수a,인수b,인수c);
+
+<!-- SCSS -->
+@mixin Avengers($w, $h, $bg...){
+    width:$w;
+    height:$h;
+    background:$bg;
+  }
+  
+  .box{
+    @include Avengers(
+    100px,
+    200px,
+    url("image/a.png") no-repeat 10px 20px,
+    url("image/b.png") no-repeat,
+    url("image/c.png")
+    );
+  }
+
+  <!-- CSS -->
+  .box {
+    width: 100px;
+    height: 200px;
+    background: 
+    url("image/a.png") no-repeat 10px 20px,
+    url("image/b.png") no-repeat, 
+    url("image/c.png");
+  }

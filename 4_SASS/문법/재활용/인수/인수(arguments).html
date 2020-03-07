@@ -1,0 +1,31 @@
+mixin은 함수(function)처럼 인수(arguments)를 가질 수 있다. (다른말로 '인자')
+하나의 mixin으로 다양한 결과를 만들 수 있다. 
+- 매개변수(parameters)란 변수의 한 종류로, 제공되는 여러 데이터 중 하나를 가리키기 위해 사용된다. 
+제공되는 여러 데이터들을 전달인수(arguments)라한다. 
+
+<!-- SCSS -->
+@mixin 믹스인이름($매게변수){
+    스타일;
+}
+@include 믹스인이름(인수);
+<!-- SASS -->
+=믹스인이름($매개변수)
+  스타일
++믹스인이름(인수)
+
+
+<!-- SCSS -->
+@mixin Avengers($width,$color){
+    border: $width dashed $color;
+}
+.box1{@include Avengers(1px, red);}
+.box2{@include Avengers(4px, blue);}
+
+<!-- CSS -->
+.box1 {
+    border: 1px dashed red;
+  }
+  
+  .box {
+    border: 4px dashed blue;
+  }

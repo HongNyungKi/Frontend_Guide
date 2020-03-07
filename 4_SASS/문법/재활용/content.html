@@ -1,0 +1,45 @@
+선언된 mixin에 @content가 포함되어 있다면 해당 부분에 원하는 스타일 블록을 전달 할 수 있다. 
+이 방식을 사용하여 기존 mixin이 가지고 있는 기능에 선택자나 속성 등을 추가할 수 있다. 
+
+<!-- 형식 -->
+@mixin 믹스인이름(){
+    스타일;
+    @content
+}
+
+@include 믹스인이름(){
+    스타일;
+}
+
+<!-- SCSS -->
+@mixin Avengers($url){
+    &::after{
+      content:$url;
+      @content
+    }
+}
+
+.box1{
+  @include Avengers("image/a.png");
+}
+.box2{
+  @include Avengers("image/a.png"){
+    display:block;
+    position:absolute;
+    width:100px;
+    height:100px;
+  };
+}
+
+<!-- CSS -->
+.box1::after {
+    content: "image/a.png";
+  }
+  
+  .box2::after {
+    content: "image/a.png";
+    display: block;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+  }
