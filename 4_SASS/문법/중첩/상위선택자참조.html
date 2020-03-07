@@ -1,0 +1,67 @@
+<!-- Ampersand(상위 선택자 참조) -->
+: 중첩 안에서 & 키워드는 상위(부모) 선택자를 참조하여 치환한다. 
+
+                                         <!-- SCSS -->
+
+<!-- ex.1) 일치선택자 기능  -->
+.btn{
+    position:absolute;
+    &.avatar{
+        color:red;
+    }
+}
+
+<!-- ex.2) 가상클래스 선택자 기능 -->
+
+.list{
+    li{
+        &:last-child{
+            margin:10px;
+        }
+    }
+}
+
+<!-- ex.3) font-size 설정하기 -->
+
+.font-size{
+    &-small{
+      font-size:10px;
+    }
+    &-medium{
+      font-size:15px;
+    }
+    &-large{
+      font-size:20px;
+    }
+  }
+
+                                            <!-- CSS -->
+
+<!-- ex.1) 일치선택자 기능 -->
+
+.btn{
+    position:absolute;
+}
+.btn.avatar{
+    color:red;
+}
+
+<!-- ex.2) 가상클래스 선택자 기능 -->
+
+.list li:last-child{
+    margin:10px;
+}
+
+<!-- ex.3) font-size 설정하기 -->
+
+.font-size-small {
+    font-size: 10px;
+}
+  
+.font-size-medium {
+    font-size: 15px;
+}
+  
+.font-size-large {
+    font-size: 20px;
+}

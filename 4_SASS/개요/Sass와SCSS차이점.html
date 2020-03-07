@@ -1,0 +1,56 @@
+<!-- SASS와 SCSS의 차이점 -->
+1. 내용은 같다. 하지만 작성하는 문법이 약간 다르다.
+2. SCSS는 CSS구문과 완벽하게 호환이 된다.
+즉, CSS내용을 작성하여 preprocessor로 옮겨 올 시 , 문법을 바꾸지 않아도 정상구동한다.
+하지만 SASS는 불가능하다.
+3. SCSS가 SASS의 상위 집합이다. 즉, 2번과 같은 이유로 SASS에서 SCSS를 도입한 것이다.
+
+<!-- ex) 작성 문법 예시1 
+    {}와 ; 의 유무-->
+1.SASS
+
+.list
+    width: 100px
+    float: left
+    li
+        color: red
+        background: url("./image.jpg")
+        &:last-child
+        margin-right: -10px
+
+2. SCSS
+
+.list {
+    width: 100px;
+    float: left;
+    li {
+      color: red;
+      background: url("./image.jpg");
+      &:last-child {
+        margin-right: -10px;
+      }
+    }
+  }
+
+  <!-- ex) 작성 문법 예시2 
+  Mixins(‘믹스인’은 재사용 가능한 기능을 만드는 방식의 의미한다.) -->
+
+  1. SASS 
+        =border-radius($radius)
+        -webkit-border-radius: $radius
+        -moz-border-radius:    $radius
+        -ms-border-radius:     $radius
+        border-radius:         $radius
+
+        .box
+        +border-radius(10px)
+
+  2. SCSS
+        @mixin border-radius($radius) {
+            -webkit-border-radius: $radius;
+            -moz-border-radius: $radius;
+                -ms-border-radius: $radius;
+                    border-radius: $radius;
+        }
+        
+        .box { @include border-radius(10px); }

@@ -1,0 +1,34 @@
+font나 margin같은 단축 속성들은 font-, margin- 형태로 개별속성 들이 다 수 존재한다. 
+즉, 동일한 네임스페이스를 갖고있는 속성들을 SCSS에서 활용하는 법을 살펴보자. 
+
+<style>
+    /* SCSS */
+
+    .box{
+  font:{
+    weight:bold;
+    size:10px;
+    family:sans-serif;
+  };
+  margin:{
+    top:10px;
+    left:20px;
+  };
+  padding:{
+    bottom:40px;
+    right:30px;
+  };
+}
+
+/* CSS */
+
+.box {
+  font-weight: bold;
+  font-size: 10px;
+  font-family: sans-serif;
+  margin-top: 10px;
+  margin-left: 20px;
+  padding-bottom: 40px;
+  padding-right: 30px;
+}
+</style>
