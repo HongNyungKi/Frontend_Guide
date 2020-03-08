@@ -1,0 +1,47 @@
+@for 은 스타일을 반복적으로 출력한다. 
+for문 과 유사하다. 
+
+@for 은 through를 사용하는 형식과 to를 사용하는 형식으로 나뉜다. 
+두 형식은 종료 조건이 해섯되는 방식이 다르다. 
+
+1. through (종료 만큼 반복)
+@for $변수 from 시작 through 종료 { 반복내용 }
+
+2. to (종료 직전까지 반복)
+@for $변수 from 시작 to 종료 { 반복내용 }
+
+<!-- SCSS -->
+
+@for $i from 1 through 3 {
+    .through:nth-child(#{$i}){
+      width:20px * $i;
+    }
+  }
+  
+  @for $i from 1 to 3{
+    .to:nth-child(#{$i}){
+      width:20px *$i;
+    }
+  }
+
+
+<!-- CSS -->
+.through:nth-child(1) {
+    width: 20px;
+  }
+  
+  .through:nth-child(2) {
+    width: 40px;
+  }
+  
+  .through:nth-child(3) {
+    width: 60px;
+  }
+  
+  .to:nth-child(1) {
+    width: 20px;
+  }
+  
+  .to:nth-child(2) {
+    width: 40px;
+  }

@@ -1,0 +1,19 @@
+<!-- SCSS -->
+@function limitSize($size){
+    @if($size >=0 and $size <= 200px){
+      @return 200px;
+    }@else {
+      @return 800px;
+    }
+  }
+  .div{
+    width: limitSize(180px);
+    height: limitSize(340px);
+  }
+
+<!-- CSS -->
+.div {
+    width: 200px;
+    height: 800px;
+  }
+  

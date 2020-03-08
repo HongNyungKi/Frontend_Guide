@@ -1,0 +1,69 @@
+가운데 정렬하기 위한 조건
+  width:(반드시포함);
+  height:(반드시포함);
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+
+  단위가 있는지 없는지 알수 있는 내장 함수 unitless()
+  단위가 있으면 ture 없으면 false 라는 boolean 값이 나온다. 
+
+  문자보강
+  #{}px
+  이라고쓰면 {}사이에 있는 문자 뒤에 px 라는 문자가 보강된다. 
+
+  relative, static 과 같은 것들은 position 가운데 정렬을 할 수 가 없다. 
+
+  <!-- SCSS -->
+  @mixin positionCenter($w,$h,$p: absolute){
+    @if($p==absolute 
+    or $p==fixed 
+    or not $p==static 
+    or not $p==relative
+    ){
+    width: if(unitless($w), #{$w}px, $w);
+    height:if(unitless($h), #{$h}px, $h);
+    position:$p;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+    }
+  }
+  
+  .box1{
+    @include positionCenter(10px,20px);
+  }
+  .box2{
+    @include positionCenter(50,50,fixed);
+  }
+  .box3{
+     @include positionCenter(100,100,relative);
+  }
+
+  <!-- CSS -->
+  .box1 {
+    width: 10px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  
+  .box2 {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }

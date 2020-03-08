@@ -1,0 +1,40 @@
+index내장함수
+index($fruits, $fruit); 라고 한다면 
+$fruits 라는 데이터에서 $fruit라는 매개변수가 몇번째 인지 표시해 주는 내장함수이다. 
+
+$fruits: apple, banana, orange, mango;
+<!-- list데이터는 ()가 있어도 되고 없어도 된다.  -->
+
+ <!-- SCSS -->
+ $fruits: apple, banana, orange, mango;
+.fruits{
+    @each $fruit in $fruits {
+      $index: index($fruits, $fruit);
+      li:nth-child($index){
+         left: 50px * $index;
+         background:url("image/#{$fruit}.png");
+      }
+    }
+}
+
+<!-- CSS -->
+.fruits li:nth-child($index) {
+    left: 50px;
+    background: url("image/apple.png");
+  }
+  
+  .fruits li:nth-child($index) {
+    left: 100px;
+    background: url("image/banana.png");
+  }
+  
+  .fruits li:nth-child($index) {
+    left: 150px;
+    background: url("image/orange.png");
+  }
+  
+  .fruits li:nth-child($index) {
+    left: 200px;
+    background: url("image/mango.png");
+  }
+  

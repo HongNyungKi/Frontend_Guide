@@ -1,0 +1,54 @@
+@if (지시어)
+
+@if 지시어는 조건에 따른 분기 처리가 가능하며, if 문(if statements)과 유사하다. 
+같이 사용할 수 있는 지시어는 @else, if 가 있다. 
+추가 지시어를 사용하면 좀 더 복잡한 조건문을 작성할 수 있다. 
+조건을 넣는 () 은 생략이 가능하다. 
+
+<!-- @if -->
+@if( 조건 ){ 조건이 참 일때 구문 }
+
+<!-- @if @else -->
+@if( 조건 ){
+    조건이 참 일때 구문
+} @else{
+    조건이 거짓일 때 구문
+}
+
+<!-- @if @else if -->
+@if( 조건1 ){
+    조건1이 참일 때 구문
+} @else if ( 조건2 ){
+    조건2이 거짓일 때 구문
+} @else{
+    모두 거짓일 때 구문
+}
+
+<!-- 예시1 -->
+$bg: true;
+div{
+    @if bg{
+        background:url("image/a.png");
+    }
+}
+
+<!-- 예시2 -->
+$fruits:orange;
+div{
+  @if $fruits==apple{
+    color: red;
+  }@else if $fruits==pineapple{
+    color: yellowgreen;
+  }@else if $fruits==banana{
+    color:yellow;
+  }@else if $fruits==orange{
+    color:orange;
+  }@else{
+    color:black;
+  }
+}
+
+<!-- CSS -->
+div {
+    color: orange;
+  }

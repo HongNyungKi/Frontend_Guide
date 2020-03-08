@@ -1,0 +1,16 @@
+조건의 값(true, false)에 따라 두개의 표현식 중 하나만 반환한다. 
+js의 조건부 삼항 연산자 와 비슷하다. 
+형식: if(조건, 표현식1, 표현식2)
+
+<!-- SCSS -->
+$width: 555px
+div{
+    width: if($width > 300px, $width, null);
+    height: 100px
+}
+
+<!-- CSS -->
+div{
+    width: 555px;
+    height: 100px
+}
