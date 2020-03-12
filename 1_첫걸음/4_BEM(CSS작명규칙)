@@ -1,0 +1,11 @@
+__ ~의 일부분
+<div class="container">
+    <div class="container__item"></div>
+</div>
+
+-- ~의 상태
+<div class="btn--success"></div>
+<div class="btn--danger"></div>
+
+- 일반적인 이름
+<div class="toggle-btn"></div>
