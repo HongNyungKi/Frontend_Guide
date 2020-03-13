@@ -90,19 +90,106 @@
             <div class="inner">
                 <div class="summary">
                     <div class="summary__title">
-                        How people build software
+                        How&nbsp;people build&nbsp;software
                     </div>
                     <div class="summary__description">
-                        Millions of developers use GitHub to build personal projects, support their businesses, and work
+                        Millions of developers use GitHub to build personal projects, support their businesses,
+                        and&nbsp;work
                         together on open source technologies.
                     </div>
                 </div>
-                <form action="" method="POST" id="sign-from">
-
+                <form action="" method="POST" id="sign-form">
+                    <ul>
+                        <li><input type="text" class="input--text" placeholder="Pick a username"></li>
+                        <li><input type="email" class="input--text" placeholder="Your email address"></li>
+                        <li>
+                            <input type="password" class="input--text" placeholder="Create a password">
+                            <p class="caption">
+                                Use at least one letter, one numeral, and seven characters.
+                            </p>
+                        </li>
+                        <li>
+                            <button type="submit" class="btn btn--primary">
+                                Sign up for Github
+                            </button>
+                            <p class="caption">
+                                By clicking "Sign up for GitHub", you agree to our terms of service and privacy
+                                policy.
+                                We'll occasionally send you account related emails.
+                            </p>
+                        </li>
+                    </ul>
                 </form>
             </div>
         </section>
-    </div>
+
+        <!-- FEATURE -->
+        <section class="section section--feature">
+            <div class="summary">
+                <div class="summary__title">
+                    Welcome home, developers
+                </div>
+                <div class="summary__description">
+                    GitHub fosters a fast, flexible, and collaborative development process that lets you work on your
+                    own or
+                    with others.
+                </div>
+            </div>
+            <div class="video">
+                <div class="video-raito">
+                    <iframe src="https://www.youtube.com/watch?v=afvT1c1ii0c" frameborder="0"></iframe>
+                </div>
+            </div>
+            <div class="tiles">
+
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <!-- WHERE ID -->
+        <section class="section section--where-is">
+            <div class="inner">
+                <div class="summary">
+                    <div class="summary__title">Where is GitHub?</div>
+                    <div class="summary__description">GitHub is where people build software. More than 18 million people
+                        use GitHub to discover, fork, and contribute to over 48 million projects.</div>
+                </div>
+                <!-- api를 사용하여 삽입시, 이것은 고유해야 하므로 id값을 사용한다. -->
+                <div id="map">
+
+                </div>
+            </div>
+
+</section>
+<script>
+    function initMap() {
+
+        // 위도(Latitude), 경도(Longitude)
+        const myLatLng = {
+            lat: 37.782293,
+            lng: -122.391240
+        };
+
+        const map = new google.maps.Map(document.getElementById('map'), {
+            center: myLatLng,
+            scrollwheel: false,
+            zoom: 18
+        });
+
+        const marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: 'GitHub'
+        });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTQIlxBn5AfKGvsfJiormAE1esN3fcCkg&collback=initMap" async
+    defer></script>
 </body>
 
 </html>
