@@ -1,0 +1,24 @@
+: 변수나 상수를 선언하게 될 때, 숫자 이외에도 다른값들을 선언할 수 있다. 
+종류는 굉장히 많다. 그중 숫자, 문자열, 참-거짓, ull-undefiend 가 대표적이다. 
+
+숫자(numbering)
+: 그냥 사용해
+let Hulk = 1;
+
+문자열(string)
+: 작은 따옴표, 큰 따옴표를 사용하여 텍스트 입력
+let Hulk = 'monster';
+
+참/거짓(boolean)
+: 참,거짓 두가지 종류의 값만 나타냄
+let Tony = true;
+let Hulk = false;
+
+Null과 undefined
+: js에서 '없을'을 나타내는 데이터 타입이다. 
+Null은 '값이 없다.' (고의적으로 설정하지 않은 것)
+Undefiend은 '아직 설정되지 않은 것.' (아직 설정을 하지 않은 것)
+let Tony = null;
+let Hulk;
+console.log(Tony);   //null
+console.log(Hulk);   //undefiend

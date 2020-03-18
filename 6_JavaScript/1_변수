@@ -1,0 +1,26 @@
+변수란
+바뀔 수 있는 값을 말한다. 한번 값을 선언하고 나서 바꿀 수 있다. 
+
+let value = 1;
+console.log(value);  //1
+value = 2;
+console.log(value);  //2
+
+변수 let
+변수 선언시 let을 사용한다. 단. 한번 선언했으면 똑같은 이를 으로 선언하지 못한다.
+ 
+let Hero = 1;
+let Hero = 2; 
+
+상수 const
+한번 선언하고 값이 바뀌지 않는 값. (값이 고정적이다)
+const Tony = 1;
+Tony = 2;
+
+또한 같은 이름으로도 선언할 수 없다. 
+const Hulk = 1;
+const Hulk = 2;
+				
+
+
+

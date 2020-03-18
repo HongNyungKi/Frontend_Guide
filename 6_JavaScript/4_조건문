@@ -1,0 +1,68 @@
+2020년 3월 18일 수요일
+오후 7:46
+
+조건문을 사용하면 특정 조건이 만족됐을 때 특정 코드를 실행할 수 있다. 
+
+If 문 ( ~~한다면 ~~해라 )
+형식: if(조건){코드;}
+여기서 {} 을, 코드 블록이라고 한다. 
+
+
+
+
+
+
+
+다른 코드 블록 범위에서는 똑같으느 이름으로 변수,상수를 
+선언할 수 있다. 
+const a = 1;
+if (true) {
+const a = 2;
+console.log("if문 안의 a값은" + a); //2
+}
+console.log("if문 밖의 a값은" + a); //1
+
+const a =1;
+if(a+1===2){
+console.log('a+1이 2입니다.')
+}
+
+If else 문( 만약 ~~ 한다면 ~~하고, 그렇지 않다면 ~~해라 )
+const a = 10;
+if (a > 15) {
+console.log("a가 15보다 크다.");
+} else {
+console.log("a가 15보다 작다.");
+} //a가 15보다 작다.
+
+Switch/case 문
+: 특정값이 무엇이냐에 따라 다른 작업을 하고 싶을 때
+Case에는 변수의 데이터값이 어떤것에 해당되는 지에 따라 
+실행되는 작업을 입력한다.
+ case마다 반드시 break를 적어야한다.
+Default는 모든 case에 아무것도 데이터값이 해당되지 않는 경우이다. 
+const device = "iphone";
+switch (device) {
+case "ipad":
+console.log("아이패드입니다.");
+break;
+case "iphone":
+console.log("아이폰입니다.");
+break;
+case "galaxy":
+console.log("갤럭시입니다.");
+break;
+default:
+console.log("모르겠네여..");
+}
+
+If else if 문 ( 이것도 아니면~~ )
+const a = 10;
+if (a === 5) {
+console.log('5입니다.');
+} else if (a === 10) {
+console.log('10입니다.');
+} else {
+console.log('5도아니고 10도 아닙니다.');
+}
+//10입니다.
