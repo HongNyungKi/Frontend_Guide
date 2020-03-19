@@ -58,3 +58,17 @@ function getGrade(score) {
   
   const grade = getGrade(90);
   console.log(grade); //A
+
+화살표 함수
+: 
+function 키워드 대신에 => 문자를 사용해서 함수를 구현. 화살표의 좌측에는 함수의 파라미터, 화살표의 우측에는 코드 블록
+const add = (a, b)=>{
+    return a+b;
+  }
+  const sum = add(1,2);
+  console.log(sum);  //3
+화살표 함수의 생략 기능
+: 코드 블록 내부에서 바로 return하는 경우 생략가능.
+하지만, getGrade 함수처럼 여러 줄로 구성되어있는 경우에는 코드 블록을 만들어야 한다. 
+const add = (a, b) => a + b;
+console.log(add(1, 2));   //3

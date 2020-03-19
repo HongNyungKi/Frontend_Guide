@@ -1,0 +1,202 @@
+2020년 3월 19일 목요일
+오전 7:52
+
+키는 공백이 없어야하며, 필요시 '',""사용!
+const sample = {
+    'key with space': true
+}
+console.log(sample["key with space"]);
+
+: 변수,상수 사용시 하나의 이름에 여러종류의 값을 넣는다.
+{키: 원하는 값} 의 형태이다. 
+const dog = {
+    name: '멍멍이',
+    age: '2'
+  console.log(dog.name);  //멍멍이
+  console.log(dog.age);   //2
+
+객체 활용
+const IronMan={
+name: '토니 스타크',
+actor: '로버트 다우니 주니어',
+'korean name': '아이언맨'
+const CaptainAmerica={
+name: '캡틴 아메리카',
+actor: '크리스 에반스',
+'korean name': '캡틴 아메리카'
+console.log(IronMan);
+console.log(CaptainAmerica);
+
+함수에서 객체를 파라미터로 받기
+const IronMan={
+    name: '토니 스타크',
+    actor: '로버트 다우니 주니어',
+    'korean name': '아이언맨'
+  };
+  const CaptainAmerica={
+    name: '스티브 로저스',
+    actor: '크리스 에반스',
+    'korean name': '캡틴 아메리카'
+  };
+  
+  function Avengers(hero){
+    const text=`${hero['korean name']}(${hero.name})을 맡은 배우는 ${hero.actor}입니다.`
+    console.log(text);
+  }
+  Avengers(IronMan);
+  //아이언맨(토니 스타크)을 맡은 배우는 로버트 다우니 주니어입니다. 
+  Avengers(CaptainAmerica);
+  // 캡틴 아메리카(스티브 로저스)을 맡은 배우는 크리스 에반스입니다.
+
+객체 비구조화 할당(객체 구조 분해)-ES6
+: 상위에서는 계속 hero.name / hero.actor 이런식으로 파라미터로 받아온 hero객체의 내부의 값을 조회한다.(hero.) 이를 짧게 변환시킬 수 있다. 
+const IronMan = {
+name: '토니 스타크',
+actor: '로버트 다우니 주니어',
+korean_name: '아이언맨'
+const CaptainAmerica = {
+name: '스티브 로저스',
+actor: '크리스 에반스',
+korean_name: '캡틴 아메리카'
+function Avengers(hero) {
+const { name, actor, korean_name } = hero;
+const text = `${korean_name}(${name})을 맡은 배우는 ${actor}입니다.`
+console.log(text);
+Avengers(IronMan);
+//아이언맨(토니 스타크)을 맡은 배우는 로버트 다우니 주니어입니다. 
+Avengers(CaptainAmerica);
+// 캡틴 아메리카(스티브 로저스)을 맡은 배우는 크리스 에반스입니다.
+
+파라미터 단계에서 객체 비구조화 할당
+const IronMan = {
+name: '토니 스타크',
+actor: '로버트 다우니 주니어',
+korean_name: '아이언맨'
+const CaptainAmerica = {
+name: '스티브 로저스',
+actor: '크리스 에반스',
+korean_name: '캡틴 아메리카'
+function Avengers({ name, actor, korean_name }) {
+const text = `${korean_name}(${name})을 맡은 배우는 ${actor}입니다.`
+console.log(text);
+Avengers(IronMan);
+//아이언맨(토니 스타크)을 맡은 배우는 로버트 다우니 주니어입니다. 
+Avengers(CaptainAmerica);
+// 캡틴 아메리카(스티브 로저스)을 맡은 배우는 크리스 에반스입니다.
+
+객체 안에 함수 넣기
+const dog = {
+    name: '멍멍이',
+    sound: '멍멍',
+    say: function () {
+        console.log(this.sound);
+    }
+};
+dog.say();
+
+
+여기서 this는 함수가 위치한 객체를 나타낸다.
+함수의 이름은 생략이 가능하다. 
+함수를 나타내는 function 도 생략가능하다. 
+화살표함수에서의 this는 function 처럼 기능을 하지 못하기 때문에
+작동하지 않는다.
+
+Getter 함수와 Setter함수
+const numbers = {
+    a: 1,
+    b: 2
+  };
+  
+  numbers.a = 5;
+  console.log(numbers);   //Object {a: 5, b: 2}
+
+이런 상황에서 getter, setter 함수를 통해 원하는 값을 바꾸거나 조회할 수 있다. 
+
+
+
+Getter 함수
+Getter 함수는 get으로 시작한다. 
+Getter 함수는 호출이 아닌 조회하려고 할때 특정코드를 실행시키고 , 연산된 값을 받아서 사용하는것을 의미한다.
+const numbers = {
+    a: 1,
+    b: 2,
+    get sum() {
+        console.log('sum함수가 실행됩니다!');
+        return this.a + this.b;
+    }
+console.log(numbers.sum);
+//sum함수가 실행됩니다! 
+numbers.b = 5;
+console.log(numbers.sum);
+//sum함수가 실행됩니다! 
+
+Sum()하여 함수를 호출하는것이 아닌, numbers.sum하여 조회하는것.
+
+Setter 함수
+Setter함수는 set으로 시작한다. 
+반드시 함수의 파마미터가 필요하다. 
+const dog = {
+    _name: '멍멍이',
+    set name(value) {
+        console.log('이름이 바뀝니다.')
+        this._name = value;
+    }
+};
+console.log(dog._name);
+dog.name = '댕댕이';
+console.log(dog._name);
+Set함수의 파라미터를 통해 값을 바꾸는 것이다.
+
+Getter함수와 Setter함수 활용
+const numbers = {
+    _a: 1,
+    _2: 2,
+    sum: 3,
+    calculate() {
+      console.log('calculate');
+      this.sum = this._a + this._b;
+    },
+    get a(){
+      return this._a;
+    },
+    get b(){
+      return this._b;
+    },
+    set a(value){
+      this._a=value;
+      this.calculate();
+    },
+    set b(value){
+      this._b=value;
+      this.calculate();
+    }
+  };
+  
+  console.log(numbers.sum); //3
+  numbers.a=5; //calculate
+  numbers.b=7; //calculate 
+  console.log(numbers.sum); //12
+  console.log(numbers.sum); //12
+  console.log(numbers.sum); //12
+
+
+const numbers = {
+    a: 1,
+    b: 2,
+    get sum() {
+      console.log('sum');
+      return this.a + this.b;
+    }
+  };
+  
+  console.log(numbers.sum);
+  numbers.a=5;
+  numbers.b=6;
+  console.log(numbers.sum);
+  console.log(numbers.sum);
+  console.log(numbers.sum);
+  console.log(numbers.sum);
+
+←
+
+매번 조회시 sum이 호출되는것을 최적화된 코드로 만드는것이다.

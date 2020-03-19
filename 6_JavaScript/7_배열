@@ -1,0 +1,27 @@
+객체는 한 변수나 상수에 여러가지 정보를 담기 위함이었다면, 
+배열은 여러 개의 항목들이 들어있는 리스트와 같다. 
+배열 선언시 [] 로 감싼다. 
+
+const array = [1, 2, 3, 4, 5];
+
+객체 배열
+const objects_array = [{ name: '멍멍이' }, { name: '야옹이' }];
+console.log(objects_array);
+console.log(objects_array[0]);
+console.log(objects_array[1]);
+
+배열에 새 항목 추가하기
+배열이 지니고 있는 내장 함수인 push 를 사용한다.
+const objects_array = [{ name: '멍멍이' }, { name: '야옹이' }];
+objects_array.push({ name: '고라니' });
+console.log(objects_array);
+
+
+
+배열의 크기 알아내기
+Length를 활용한다.
+const objects_array = [{ name: '멍멍이' }, { name: '야옹이' }];
+console.log(objects_array.length); //2
+objects_array.push({ name: '고라니' });
+console.log(objects_array.length); //3
+
