@@ -1,0 +1,176 @@
+ForEach
+: for문을 대체 시킬 수 있다.
+const Avengers = ['IronMan', 'Hulk', 'SpiderMan', 'Thor'];
+가 선언되어 있다.
+For 문 이용
+for (let i = 0; i < Avengers.length; i++) {
+console.log(Avengers[i]);
+}
+forEach의 함수생성 모드
+function print(hero) {
+console.log(hero);
+}
+Avengers.forEach(print);
+forEach문에 함수 직접주입 모드
+Avengers.forEach(function (hero) {
+console.log(hero);
+});
+forEach문의 화살표함수 모드
+Avengers.forEach(hero => {
+console.log(hero);
+});
+
+
+
+
+
+Map
+: 배열안의 각 원소를 변환 할 때 사용한다.
+이 과정에서 새로운 배열이 만들어진다.
+const array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+이 배열을 숫자들을   제곱의 값으로 바꾸자
+For문 사용
+const squared = [];
+for (let i = 0; i < array.length; i++) {
+squared.push(array[i] * array[i]);
+}
+console.log(squared);
+forEach사용
+const squared = [];
+array.forEach(n => {
+squared.push(n * n);
+});
+console.log(squared);
+map사용
+const square = n => n*n;
+const squared = array.map(square);
+console.log(squared);
+map사용
+const squared = array.map(n => n*n);
+console.log(squared);
+
+Map 활용
+const items = [
+{id: 1,text: '멍멍이'},
+{id: 2,text: '야옹이'}
+];
+const texts = items.map(sound=>sound.text);
+console.log(texts);
+
+
+
+
+Indexof
+: 원하는 항목이 어디있은지 아는 법
+const Avengers=['아이언맨','스파이더맨','캡틴아메리카'];
+const index=Avengers.indexOf('아이언맨');
+console.log(index);
+
+
+findindex
+: 객체로 이루어진 배열에서 원하는 특정 조건을 갖고있는 항목의 순서를 찾는 것.
+const animals=[{name:'개', age:2, sound:'멍멍'},{name:'고양이', age:4, sound:'야옹'}];
+const index=animals.findIndex(younger=>younger.age===2);
+console.log(index)
+
+
+find
+: 객체로 이루어진 배열에서 원하는 특정 조건을 갖고있는 항목을 찾는 것.
+const animals=[{name:'개', age:2, sound:'멍멍'},{name:'고양이', age:4, sound:'야옹'}];
+const index=animals.find(younger=>younger.age===2);
+console.log(index)
+
+Filter
+: 특정 조건을 만족하는 값들만 따로 추출하여 새로운 배열을 만든다. 
+const animals=[{name:'개', age:2, sound:'멍멍'},{name:'고양이', age:4, sound:'야옹'},{name:'고라니', age:2, sound:'?'}];
+const myfav = animals.filter(condition=>condition.age==2);
+console.log(myfav);
+특정조건이  boolean값일 경우 ! 를 사용할수 있다. 
+const myfav = animals.filter(condition=>!condition.age);
+
+Splice
+: 배열에서 특정 항목을 제거할 때 사용한다. 
+const numbers =[10,20,30,40];
+const index=numbers.indexOf(30);
+numbers.splice(index, 2);
+console.log(numbers);
+제거한 값도 보기 위해서는
+const numbers =[10,20,30,40];
+const index=numbers.indexOf(30);
+const spliced=numbers.splice(index, 2)
+console.log(numbers);
+console.log(spliced);
+하면 볼 수 있다. 
+
+Slice
+: 배열을 잘라낼 때 사용하는데, splice와 다른점은 기존의 배열은 건들이지 않는다. 
+const numbers =[10,20,30,40];
+const sliced= numbers.slice(0,2);
+console.log(sliced);
+console.log(numbers);
+Slice사용법은 star~, end~가 있다 확인바람
+
+
+Shift
+: 첫번째 원소를 배열에서 추출해주는 함수이다. 
+기존의 배열은 첫번째 원소가 제외된 나머지로만 구성된다.
+const numbers = [10, 20, 30, 40];
+const value = numbers.shift();
+console.log(value);
+console.log(numbers);
+
+Unshift
+: shift 의 반대이다. 
+배열의 맨 앞에 새로운 원소를 추가한다. 
+const numbers = [10, 20, 30, 40];
+const value= numbers.unshift(-10);
+console.log(numbers);
+
+Pop
+: 마지막 원소를 배열에서 추출해주는 함수이다.
+기존의 배열은 마지막 원소가 제외된 나머지로만 구성된다.
+Push함수의 반대 개념이라 할 수 있다. 
+const numbers = [10, 20, 30, 40];
+const value= numbers.pop();
+console.log(value);
+console.log(numbers);
+
+Push
+: 배열의 맨 마지막에 새로운 원소를 추가한다. 
+const numbers = [10, 20, 30, 40];
+const value= numbers.push(50);
+console.log(numbers);
+
+
+Join
+: 배열안의 값들을 문자형태로 합쳐주는 함수이다. 
+Join함수의 파라미터는 문자열을 어떻게 구분할지에 대한 기준이다.
+const all=[1,2,3,4,5];
+console.log(all.join());
+//1,2,3,4,5
+console.log(all.join(' '));
+// 1 2 3 4 5
+console.log(all.join(', '))
+//1, 2, 3, 4, 5
+
+
+Concat
+: 여러개의 배열을 하나의 배열로 합치는 함수이다.
+const a=[1,2,3];
+const b=[4,5,6];
+const concated=a.concat(b);
+console.log(concated);
+다른 표기법으로는 
+const concated=[...a, ...b];
+Concat은 기존의 배열을 수정,파괴하지 않는다. 
+console.log(a);//[1,2,3]
+
+
+reduce
+: 배열이 있을때, 배열안의 값들을 사용하여 연산 할 시 사용하는 함수이다.
+배열안의 원소를 다 더해보자 
+const numbers = [1, 2, 3, 4, 5];
+let sum = 0;
+numbers.forEach(n => {
+sum += n;
+console.log(sum);
